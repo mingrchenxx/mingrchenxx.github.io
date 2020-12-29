@@ -1,8 +1,8 @@
 ---
 layout: page
 title: About
-description: 打码改变世界
-keywords: Zhuang Ma, 马壮
+description: 入侵乌拉圭的袋鼠
+keywords: mingrchenxx
 comments: true
 menu: 关于
 permalink: /about/
