@@ -120,15 +120,15 @@ disqus:
     username: 
 # https://imsun.net/posts/gitment-introduction/
 gitment:
-    owner: mingrchenxx
-    repo: mingrchenxx.github.io
+    owner: 
+    repo: 
     oauth:
         client_id: 
         client_secret: 
 # https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: mingrchenxx
-    repo: mingrchenxx.github.io
+    owner: 
+    repo: 
     clientID: 
     clientSecret: 
 # 在使用其它评论组件时可点击显示 Disqus
