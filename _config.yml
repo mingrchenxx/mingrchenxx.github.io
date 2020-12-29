@@ -129,8 +129,8 @@ gitment:
 gitalk:
     owner: mingrchenxx
     repo: mingrchenxx.github.io
-    clientID: 78b7495b6bdb4adefd6b
-    clientSecret: d05bfcafe4096f14e174f4d38f15819635896d31
+    clientID: 
+    clientSecret: 
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
