@@ -128,7 +128,7 @@ gitment:
 # https://github.com/gitalk/gitalk#install
 gitalk:
     owner: mingrchenxx
-    repo: blog_comment
+    repo: mingrchenxx.github.io
     clientID: 78b7495b6bdb4adefd6b
     clientSecret: d33a9a5585589d0ed6ce53c215e8ff187c1e1e31
 # 在使用其它评论组件时可点击显示 Disqus
