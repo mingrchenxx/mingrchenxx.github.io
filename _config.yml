@@ -4,14 +4,14 @@
 baseurl:
 url: https://mingrchenxx.github.io
 date_format: "ordinal"
-title: 入侵乌拉圭的袋鼠
+title: 袋鼠
 subtitle: 袋鼠的世界
-description: "马壮的个人博客，公众号：闷骚的程序员"
-keywords: 码志, Zhuang Ma, mzlogin, mazhuang, 闷骚的程序员
-timezone: Asia/Shanghai
+description: "一只入侵乌拉圭的袋鼠"
+keywords: 袋鼠, Mingrchen
+timezone: Asia/Jinan
 encoding: "utf-8"
 side_bar_repo_limit: 5
-repository: mzlogin/mzlogin.github.io
+repository: mingrchenxx/mingrchenxx.github.io
 # 对 css 和 js 资源的 cdn 加速配置
 cdn:
     jsdelivr:
@@ -23,8 +23,8 @@ components:
         enabled: false
     # 不蒜子访问统计
     busuanzi:
-        enabled: true
-        start_date: 2020-05-03
+        enabled: false
+        start_date: 
 # 压缩页面内容
 compress_html:
   clippings: all
@@ -120,17 +120,17 @@ disqus:
     username: 
 # https://imsun.net/posts/gitment-introduction/
 gitment:
-    owner: mzlogin
-    repo: blog-comments
+    owner: mingrchenxx
+    repo: mingrchenxx.github.io
     oauth:
-        client_id: d2e1cbbd298958076462
-        client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+        client_id: 
+        client_secret: 
 # https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: mzlogin
-    repo: blog-comments
-    clientID: d2e1cbbd298958076462
-    clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+    owner: mingrchenxx
+    repo: mingrchenxx.github.io
+    clientID: 
+    clientSecret: 
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
@@ -139,17 +139,17 @@ lazy_load_disqus : false
 # ---------------- #
 simple_jekyll_search:
     # 是否支持全文搜索
-    fulltext: false
+    fulltext: true
     # 最多显示多少条搜索结果
-    limit: 10
+    limit: 15
 
 # ---------------- #
 #      Google      #
 # ---------------- #
 google:
-    analytics_id: UA-80669434-1
+    analytics_id: 
     adsense:
-        footer: true
-        sidebar: true 
-        content_header: true
+        footer: false
+        sidebar: false 
+        content_header: false
         content_footer: false
