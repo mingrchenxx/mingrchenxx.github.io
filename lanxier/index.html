@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!-- saved from url=(0146)file:///F:/wx/WeChat%20Files/wxid_baqjia2788pd12/FileStorage/File/2024-01/6b99d260a69362619db3652417a947cf_340a42321775489a816971eabb66cb9a_8.html -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title style="font-weight: bold; font-size: 24px; text-align: center">
+      岚兮儿双区特惠
+    </title>
+    <style>
+      body {
+        font-family: "黑体", sans-serif;
+        text-align: center;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+      a {
+        font-size: 1.5em;
+      }
+      .prize {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      button {
+        margin: 5px;
+        width: 200px;
+        height: 50px;
+        cursor: pointer;
+      }
+      table {
+        margin: auto;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      th,
+      td {
+        padding: 10px;
+      }
+      .btn1{
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 10px;
+      }
+      .btn2{
+        background-color: #409EFF; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 10px;
+      }
+      .jggBox{
+        /* 类似于九宫格 */
+        width: 300px;
+        height: 100%;
+        margin: 0 auto;
+        padding: 30px 0;
+      }
+      .prize{
+        padding: 10px;
+        list-style: none;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #ccc;
+      }
+      .djc{
+        position: fixed;
+        bottom: 10%;
+        right: 0%;
+        width: 200px;
+        height: 50px;
+        cursor: pointer;
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        border-radius: 16px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <el-alert
+        title="本抽奖模拟器仅供娱乐或学习使用，无其他任何用途"
+        type="warning" show-icon :closable="false">
+      </el-alert>
+      <el-alert
+        style="margin-top: 10px;"
+        title="更多活动 敬请期待"
+        type="success" show-icon :closable="false">
+      </el-alert>
+      <h1>岚兮儿双区特惠抽奖模拟</h1>
+      <button onclick="buyKey(1)" class="btn1">购买1把钥匙</button>
+      <button onclick="buyKey(11)" class="btn1">购买11把钥匙</button>
+      <div class="jggBox">
+        <div class="prize">岚兮儿</div>
+        <div class="prize">非觉醒版 王者玉锋</div>
+        <div class="prize">雷神-脉冲核心 皮肤</div>
+        <div class="prize">火麒麟-大唐荣光 皮肤</div>
+        <div class="prize">甜心偶像</div>
+        <div class="prize">炫金千变</div>
+        <div class="prize">M4A1-雷神</div>
+        <div class="prize">AK47-火麒麟</div>
+        <div class="prize">运动护目镜</div>
+        <div class="prize">王者之石x1</div>
+        <div class="prize">积分x100</div>
+        <div class="prize">积分x50</div>
+        <div class="prize">积分x20</div>
+        <div class="prize">积分x5</div>
+        <div class="prize">积分x10</div>
+      </div>
+      <button onclick="drawOnce()" class="btn2">慢性死忙单发</button>
+      <button onclick="drawTenTimes()" class="btn2">快速性死亡十连</button>
+      <br />
+      <br />
+      <div id="consumedKeys" style="font-size: 30px; margin-bottom: 10px"></div>
+      <div id="remainingKeys" style="font-size: 30px; margin-top: 10px"></div>
+      <div id="xlk" style="font-size: 30px; margin-top: 10px"></div>
+      <div id="yxk" style="font-size: 30px; margin-top: 10px"></div>
+      <div id="wzk" style="font-size: 30px; margin-top: 10px"></div>
+      <div id="csk" style="font-size: 30px; margin-top: 10px"></div>
+      <div id="xcfx" style="font-size: 30px; margin-top: 10px"></div>
+      <div id="djk" style="font-size: 30px; margin-top: 10px"></div>
+      <div id="cfd" style="font-size: 30px; margin-top: 10px"></div>
+  
+      <button style="display: none" id="zzz" onclick="showResults()">
+        中奖记录
+      </button>
+      <br />
+      <div id="results" style="display: none">
+        <h2>已抽得奖品：</h2>
+        <table id="resultsTable">
+          <tbody>
+            <tr>
+              <th>奖品名称</th>
+              <th>变成钥匙</th>
+              <th>操作</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <button id="onhand" onclick="lingqu()" class="djc">
+      仅限掌上模拟器购买可额外领取1把钥匙
+    </button>
+    <br />
+    <br />
+    <el-alert
+      title="本抽奖模拟器仅供娱乐或学习使用，无其他任何用途"
+      type="warning" :closable="false" show-icon>
+    </el-alert>
+    <!-- <p style="font-size:15px;">本抽奖模拟器仅供娱乐或学习使用，无其他任何用途</p> -->
+    </div>
+  </body>
+   <!-- import Vue before Element -->
+   <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+   <!-- import JavaScript -->
+   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { 
+          
+        }
+      },
+      mounted() {
+        this.open()
+      },
+      methods: {
+        open() {
+          this.$alert('次模拟器仅供学习和娱乐参考，切勿当真。如有侵权，请联系删除。', '温馨提示', {
+            confirmButtonText: '确定',
+            callback: action => {
+              
+            }
+          });
+        }
+      }
+    })
+    let keys = 0;
+    let consumedKeys = 0;
+    let storedItems = [];
+    let jf = 0;
+    let wzzs = 0;
+    let s = 0;
+    function drawOnce() {
+      if (keys >= 1) {
+        const result = drawPrize();
+        alert(`恭喜您获得了礼包：${result}`);
+        if (getDecomposeKeys(result) !== 0) {
+          addResultToBox(result);
+        }
+        keys--;
+      } else {
+        alert("抱歉，您的抽奖钥匙不足~");
+      }
+      updateKeysInfo();
+    }
+    function drawTenTimes() {
+      if(keys>=10){let results=[];for(let i=0;i<10;i++){const result=drawPrize();results['\x70\x75\x73\x68'](result);if(getDecomposeKeys(result)!==0){addResultToBox(result)}}window["\x61\x6c\x65\x72\x74"](`恭喜您获得了礼包：\n${results['\x6a\x6f\x69\x6e']("\n")}`);keys-=10}else{window["\x61\x6c\x65\x72\x74"]("\u62b1\u6b49\uff0c\u60a8\u7684\u62bd\u5956\u94a5\u5319\u4e0d\u8db3\x7e")}updateKeysInfo();
+    }
+    function drawPrize() {
+      const prizes=["\u5c9a\u516e\u513f","\u975e\u89c9\u9192\u7248 \u738b\u8005\u7389\u950b","\u96f7\u795e\x2d\u8109\u51b2\u6838\u5fc3 \u76ae\u80a4","\u706b\u9e92\u9e9f\x2d\u5927\u5510\u8363\u5149 \u76ae\u80a4","\u751c\u5fc3\u5076\u50cf","\u70ab\u91d1\u5343\u53d8","\x4d\x34\x41\x31\x2d\u96f7\u795e","\x41\x4b\x34\x37\x2d\u706b\u9e92\u9e9f","\u8fd0\u52a8\u62a4\u76ee\u955c","\u738b\u8005\u4e4b\u77f3\x78\x31","\u79ef\u5206\x78\x31\x30\x30","\u79ef\u5206\x78\x35\x30","\u79ef\u5206\x78\x32\x30","\u79ef\u5206\x78\x35","\u79ef\u5206\x78\x31\x30",];const probabilities=[20,20,30,30,40,40,60,60,120,1400,20,160,1000,3000,4000,];let randomNum=window["\x4d\x61\x74\x68"]['\x72\x61\x6e\x64\x6f\x6d']()*10000;let cumulativeProbability=0;for(let i=0;i<probabilities['\x6c\x65\x6e\x67\x74\x68'];i++){cumulativeProbability+=probabilities[i];if(randomNum<=cumulativeProbability){if(i==14){jf=jf+10}if(i==13){jf=jf+5}if(i==12){jf=jf+20}if(i==11){jf=jf+50}if(i==10){jf=jf+100}if(i==9){wzzs=wzzs+1}return prizes[i]}}
+      /*const prizes=["\u4f20\u8bf4\u7075\u7738 \u65e0\u5e8f\u5217\u53f7\u7248","\u975e\u89c9\u9192\u7248\u738b\u8005\u82b3\u8587","\x4d\x31\x34\x45\x42\x52\x2d\u7384\u6b66","\u738b\u8005\u6f58\u591a\u62c9","\u89c9\u9192\u7248\u70bc\u72f1\x2d\u60a6\u84dd","\u88c1\u51b3\x2d\u6d41\u5149\u79d8\u94f6\u76ae\u80a4","\x41\x4e\x39\x34\x2d\u8d85\u65b0\u661f","\x4d\x34\x41\x31\x2d\u9f99\u8840","\u738b\u8005\u77f3\u5934\x78\x31\x30","\u9053\u5177\u5361\x78\x31","\x31\x30\x30\x30\x30\u70b9\u5238","\u65b0\u6625\u798f\u661f\x78\x31","\u7965\u9f99\u5361\x78\x31","\u4f20\u8bf4\u5361\x78\x31","\u738b\u8005\u5361\x78\x31","\u82f1\u96c4\u5361\x78\x31",];const probabilities=[10,15,25,15,20,25,30,80,150,3500,60,10,3315,15,80,2650,];let randomNum=window["\x4d\x61\x74\x68"]['\x72\x61\x6e\x64\x6f\x6d']()*10000;let cumulativeProbability=0;for(let i=0;i<probabilities['\x6c\x65\x6e\x67\x74\x68'];i++){cumulativeProbability+=probabilities[i];if(randomNum<=cumulativeProbability){if(i==15){yxk=yxk+1}if(i==14){wzk=wzk+1}if(i==13){csk=csk+1}if(i==12){xlk=xlk+1}if(i==11){xcfx=xcfx+1}if(i==10){cfd=cfd+1}if(i==9){djk=djk+1}return prizes[i]}}
+    */
+    }
+    function addResultToBox(result) {
+      storedItems.push({
+        item: result,
+        decomposeKeys: getDecomposeKeys(result),
+      });
+    }
+    function showResults() {
+      const resultsBox = document.getElementById("results");
+      resultsBox.style.display = "block";
+      displayStoredItems();
+    }
+
+    function displayStoredItems() {
+      const resultsTable=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x72\x65\x73\x75\x6c\x74\x73\x54\x61\x62\x6c\x65");resultsTable['\x69\x6e\x6e\x65\x72\x48\x54\x4d\x4c']="";const headerRow=resultsTable['\x69\x6e\x73\x65\x72\x74\x52\x6f\x77'](0);const headerCell1=headerRow['\x69\x6e\x73\x65\x72\x74\x43\x65\x6c\x6c'](0);headerCell1['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']="\u5956\u54c1\u540d\u79f0";const headerCell2=headerRow['\x69\x6e\x73\x65\x72\x74\x43\x65\x6c\x6c'](1);headerCell2['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']="\u53d8\u6210\u94a5\u5319";const headerCell3=headerRow['\x69\x6e\x73\x65\x72\x74\x43\x65\x6c\x6c'](2);headerCell3['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']="\u64cd\u4f5c";for(let i=0;i<storedItems['\x6c\x65\x6e\x67\x74\x68'];i++){const row=resultsTable['\x69\x6e\x73\x65\x72\x74\x52\x6f\x77']();const cell1=row['\x69\x6e\x73\x65\x72\x74\x43\x65\x6c\x6c'](0);cell1['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']=storedItems[i]['\x69\x74\x65\x6d'];const cell2=row['\x69\x6e\x73\x65\x72\x74\x43\x65\x6c\x6c'](1);cell2['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']=storedItems[i]['\x64\x65\x63\x6f\x6d\x70\x6f\x73\x65\x4b\x65\x79\x73'];const cell3=row['\x69\x6e\x73\x65\x72\x74\x43\x65\x6c\x6c'](2);if(storedItems[i]['\x64\x65\x63\x6f\x6d\x70\x6f\x73\x65\x64']){const decomposedLabel=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74']("\x73\x70\x61\x6e");decomposedLabel['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']="\u5df2\u5206\u89e3";cell3['\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64'](decomposedLabel)}else{const decomposeButton=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74']("\x62\x75\x74\x74\x6f\x6e");decomposeButton['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']="\u5206\u89e3";decomposeButton['\x6f\x6e\x63\x6c\x69\x63\x6b']=function(){decomposeItem(i)};cell3['\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64'](decomposeButton);const sendButton=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74']("\x62\x75\x74\x74\x6f\x6e");sendButton['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']="\u53d1\u9001";sendButton['\x6f\x6e\x63\x6c\x69\x63\x6b']=function(){sendItem(i)};cell3['\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64'](sendButton)}if(storedItems[i]['\x73\x65\x6e\x74']){const sentLabel=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74']("\x73\x70\x61\x6e");sentLabel['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']="\u5df2\u53d1\u9001";cell3['\x69\x6e\x6e\x65\x72\x48\x54\x4d\x4c']="";cell3['\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64'](sentLabel)}}
+    }
+
+    function decomposeItem(index) {
+      const item=storedItems[index]['\x69\x74\x65\x6d'];const decomposeCount=storedItems[index]['\x64\x65\x63\x6f\x6d\x70\x6f\x73\x65\x4b\x65\x79\x73'];const confirmDecompose=confirm(`是否将${item}分解成${decomposeCount}把钥匙？`);if(confirmDecompose){keys+=decomposeCount;storedItems[index]['\x64\x65\x63\x6f\x6d\x70\x6f\x73\x65\x64']=true;displayStoredItems();window["\x61\x6c\x65\x72\x74"](`成功分解道具，获得${decomposeCount}把钥匙，当前总钥匙数量为${keys}`);updateKeysInfo()}
+    }
+
+    function sendItem(index) {
+      const item=storedItems[index]['\x69\x74\x65\x6d'];storedItems[index]['\x73\x65\x6e\x74']=true;displayStoredItems();window["\x61\x6c\x65\x72\x74"](`恭喜您获得了礼包：${item}(永久)`);
+    }
+
+    function buyKey(amount) {
+      keys+=amount;consumedKeys+=amount===1?10:100;window["\x61\x6c\x65\x72\x74"](`成功购买${amount}把钥匙,当前总钥匙数量为${keys}`);updateKeysInfo();
+    }
+    function storeItem(item) {
+      storedItems.push({ item: item, decomposeKeys: getDecomposeKeys(item) });
+    }
+    function updateKeysInfo() {
+      const remainingKeysInfo=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x72\x65\x6d\x61\x69\x6e\x69\x6e\x67\x4b\x65\x79\x73");remainingKeysInfo['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']=`当前剩余钥匙数量：${keys}`;const consumedKeysInfo=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x63\x6f\x6e\x73\x75\x6d\x65\x64\x4b\x65\x79\x73");consumedKeysInfo['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']=`已消费：${consumedKeys}元`;const jfInfo=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x78\x6c\x6b");jfInfo['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']=`积分：${jf}`;const wzzsInfo=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x79\x78\x6b");wzzsInfo['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']=`王者之石：${wzzs}`;window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x7a\x7a\x7a")['\x63\x6c\x69\x63\x6b']();
+      /*const remainingKeysInfo=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x72\x65\x6d\x61\x69\x6e\x69\x6e\x67\x4b\x65\x79\x73");remainingKeysInfo['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']=`当前剩余钥匙数量：${keys}`;const consumedKeysInfo=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x63\x6f\x6e\x73\x75\x6d\x65\x64\x4b\x65\x79\x73");consumedKeysInfo['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']=`已消费：${consumedKeys}元`;const xlkInfo=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x78\x6c\x6b");xlkInfo['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']=`祥龙卡：${xlk}`;const yxkInfo=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x79\x78\x6b");yxkInfo['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']=`英雄卡：${yxk}`;const wzkInfo=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x77\x7a\x6b");wzkInfo['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']=`王者卡：${wzk}`;const cskInfo=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x63\x73\x6b");cskInfo['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']=`传说卡：${csk}`;const xcfxInfo=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x78\x63\x66\x78");xcfxInfo['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']=`新春福星：${xcfx}`;const djkInfo=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x64\x6a\x6b");djkInfo['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']=`道具卡：${djk}`;const cfdInfo=window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x63\x66\x64");cfdInfo['\x74\x65\x78\x74\x43\x6f\x6e\x74\x65\x6e\x74']=`抽中点券累计次数：${cfd}`;window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x7a\x7a\x7a")['\x63\x6c\x69\x63\x6b']();
+    */
+    }
+    function getDecomposeKeys(item) {
+      const decomposeKeyMap={"\u5c9a\u516e\u513f":12,"\u975e\u89c9\u9192\u7248 \u738b\u8005\u7389\u950b":12,"\u96f7\u795e\x2d\u8109\u51b2\u6838\u5fc3 \u76ae\u80a4":8,"\u706b\u9e92\u9e9f\x2d\u5927\u5510\u8363\u5149 \u76ae\u80a4":8,"\u751c\u5fc3\u5076\u50cf":6,"\u70ab\u91d1\u5343\u53d8":6,"\x4d\x34\x41\x31\x2d\u96f7\u795e":4,"\x41\x4b\x34\x37\x2d\u706b\u9e92\u9e9f":4,"\u8fd0\u52a8\u62a4\u76ee\u955c":2,};return decomposeKeyMap[item]||0;
+      /*const decomposeKeyMap={"\u4f20\u8bf4\u7075\u7738 \u65e0\u5e8f\u5217\u53f7\u7248":30,非觉醒版王者芳薇:20,"\x4d\x31\x34\x45\x42\x52\x2d\u7384\u6b66":15,王者潘多拉:20,"\u89c9\u9192\u7248\u70bc\u72f1\x2d\u60a6\u84dd":15,"\u88c1\u51b3\x2d\u6d41\u5149\u79d8\u94f6\u76ae\u80a4":10,"\x41\x4e\x39\x34\x2d\u8d85\u65b0\u661f":6,"\x4d\x34\x41\x31\x2d\u9f99\u8840":4,道具卡x1:0,王者之石x10:0,"\x31\x30\x30\x30\x30\u70b9\u5238":0,新春福星x1:0,祥龙卡x1:0,传说卡x1:0,王者卡x1:0,英雄卡x1:0,};return decomposeKeyMap[item]||0;
+    */
+    }
+
+    function lingqu() {
+      if(consumedKeys>0){keys=keys+1;window["\x61\x6c\x65\x72\x74"](`成功领取1把钥匙,当前总钥匙数量为${keys}`);updateKeysInfo();window["\x64\x6f\x63\x75\x6d\x65\x6e\x74"]['\x67\x65\x74\x45\x6c\x65\x6d\x65\x6e\x74\x42\x79\x49\x64']("\x6f\x6e\x68\x61\x6e\x64")['\x64\x69\x73\x61\x62\x6c\x65\x64']=true}if(consumedKeys<10){window["\x61\x6c\x65\x72\x74"](`抱歉，您还未在掌上模拟器购买礼包。`)}
+    }
+  
+  </script>
+</html>
